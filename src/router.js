@@ -1,12 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import TabelaDiversos from './components/TabelaDiversos.vue';
-import ImagensDiversas from './components/ImagensDiversas.vue';
-import VideoUnico from './components/VideoUnico.vue';
-
 const routes = [
-  { path: '/video', component: VideoUnico },
-  { path: '/tabela', component: TabelaDiversos },
-  { path: '/imagens', component: ImagensDiversas },
+  { path: '/video', component: () => import('./components/VideoUnico.vue')},
+  { path: '/tabela', component:  () => import('./components/TabelaDiversos.vue')},
+  { path: '/imagens', component: () => import('./components/ImagensDiversas.vue')},
   // Outras rotas aqui
 ];
 
